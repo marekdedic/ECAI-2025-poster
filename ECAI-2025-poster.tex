@@ -106,6 +106,33 @@
 	\separatorcolumn
 
 	\begin{column}{\colwidth}
+		\begin{block}{The performance-complexity trade-off}
+			Graph neural networks (GNNs) suffer from high computational demands, which may be a prohibitive issue in some applications. We investigate the interplay of graph coarsening and the performance of a downstream task. The main aim of this work is to explore the performance-complexity characteristics in the context of graph learning.
+			\begin{figure}
+				\includegraphics[width=0.8\linewidth]{images/performance-complexity/performance-complexity.pdf}
+			\end{figure}
+		\end{block}
+
+		\begin{block}{HARP pipeline overview}
+			Our work builds on the HARP method for pretraining on coarsened graphs.
+			\begin{figure}
+				\includegraphics[width=\linewidth]{images/harp-overview/harp-overview.pdf}
+			\end{figure}
+		\end{block}
+
+		\begin{block}{Adaptive prolongation}
+			The main contribution of this work is the adaptive prolongation schema. The algorithm works with the pre-coarsened graphs produced by HARP, however, the prolongation steps are decoupled from the coarsening steps.
+			\begin{figure}
+				\includegraphics[width=\linewidth]{images/adaptive-prolongation/adaptive-prolongation.pdf}
+			\end{figure}
+		\end{block}
+
+		\begin{block}{Results}
+			\begin{figure}
+				\includegraphics[width = 0.95\linewidth]{images/adaptive-coarsening/adaptive-coarsening.pdf}
+			\end{figure}
+		\end{block}
+
 		\begin{block}{Motivation -- Hunting for Malicious Entities in Network}
 			\input{images/motivation_poster}
 
