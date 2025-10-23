@@ -144,23 +144,23 @@
 			\end{itemize}
 		\end{alertblock}
 
-			\begin{block}{Convolutional Signal Propagation (CSP)}
-				\begin{center}
-					\adjustbox{width=0.8\columnwidth}{%
-						\input{images/csp_algorithm_poster}
-					}
-				\end{center}
-				\begin{equation*}
-					\hspace*{-1.5cm}
-					x_k^{(l+1)} = \underbrace{%
-						\frac{1}{deg\left( \uu_k \right)}\sum_{\substack{j \\ \uu_k \in \vv_j}}
-					}_{\mathrm{2nd~step}} \
-					\underbrace{
-						\frac{1}{deg \left( \vv_j \right)}\sum_{\substack{i \\ \uu_i \in \vv_j}} x_i^{(l)}
-					}_{\mathrm{1st~step}},\quad
-					\mathmat{X}^{(l+1)} = \underbrace{\D^{-1} \HH}_{\mathrm{2nd~step}} \ \underbrace{\B^{-1} \HH^T \mathmat{X}^{(l)}}_{\mathrm{1st~step}}
-				\end{equation*}
-			\end{block}
+		\begin{block}{Convolutional Signal Propagation (CSP)}
+			\begin{center}
+				\adjustbox{width=0.8\columnwidth}{%
+					\input{images/csp_algorithm_poster}
+				}
+			\end{center}
+			\begin{equation*}
+				\hspace*{-1.5cm}
+				x_k^{(l+1)} = \underbrace{%
+					\frac{1}{deg\left( \uu_k \right)}\sum_{\substack{j \\ \uu_k \in \vv_j}}
+				}_{\mathrm{2nd~step}} \
+				\underbrace{
+					\frac{1}{deg \left( \vv_j \right)}\sum_{\substack{i \\ \uu_i \in \vv_j}} x_i^{(l)}
+				}_{\mathrm{1st~step}},\quad
+				\mathmat{X}^{(l+1)} = \underbrace{\D^{-1} \HH}_{\mathrm{2nd~step}} \ \underbrace{\B^{-1} \HH^T \mathmat{X}^{(l)}}_{\mathrm{1st~step}}
+			\end{equation*}
+		\end{block}
 
 		\begin{block}{CSP Retrieval Results -- P@{}100, exectution time in \(\mu s \)}
 			\adjustbox{width=\columnwidth}{%
