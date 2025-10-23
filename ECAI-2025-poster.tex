@@ -106,17 +106,25 @@
 	\separatorcolumn
 
 	\begin{column}{\colwidth}
+		\begin{alertblock}{3 main projects}
+			\begin{itemize}
+				\item A HARP-based method for solving performance-complexity trade-off in GNNs via adaptive prolongation.
+				\item CSP is a very simple learning method for classification and retrieval on graphs, hyper-graphs or problems described by one-hot features. It achieves comparable performance to reference methods in multiple problems, while being significantly cheaper to compute.
+				\item A hyper-parameter optimizer benchmark for GNNs and a novel Cross-RF transfer metalearning method that outperforms SMBOs.
+			\end{itemize}
+		\end{alertblock}
+
 		\begin{block}{The performance-complexity trade-off}
 			Graph neural networks (GNNs) suffer from high computational demands, which may be a prohibitive issue in some applications. We investigate the interplay of graph coarsening and the performance of a downstream task. The main aim of this work is to explore the performance-complexity characteristics in the context of graph learning.
 			\begin{figure}
-				\includegraphics[width=0.8\linewidth]{images/performance-complexity/performance-complexity.pdf}
+				\includegraphics[width=0.7\linewidth]{images/performance-complexity/performance-complexity.pdf}
 			\end{figure}
 		\end{block}
 
 		\begin{block}{HARP pipeline overview}
 			Our work builds on the HARP method for pretraining on coarsened graphs.
 			\begin{figure}
-				\includegraphics[width=\linewidth]{images/harp-overview/harp-overview.pdf}
+				\includegraphics[width=0.85\linewidth]{images/harp-overview/harp-overview.pdf}
 			\end{figure}
 		\end{block}
 
@@ -127,9 +135,9 @@
 			\end{figure}
 		\end{block}
 
-		\begin{block}{Results}
+		\begin{block}{Adaptive prolongation results}
 			\begin{figure}
-				\includegraphics[width = 0.95\linewidth]{images/adaptive-coarsening/adaptive-coarsening.pdf}
+				\includegraphics[width=0.7\linewidth]{images/adaptive-coarsening/adaptive-coarsening.pdf}
 			\end{figure}
 		\end{block}
 	\end{column}
@@ -137,13 +145,6 @@
 	\separatorcolumn
 
 	\begin{column}{\colwidth}
-		\begin{alertblock}{3 main projects}
-			\begin{itemize}
-				\item A HARP-based method for solving performance-complexity trade-off in GNNs via adaptive prolongation.
-				\item CSP is a very simple learning method for classification and retrieval on graphs, hyper-graphs or problems described by one-hot features. It achieves comparable performance to reference methods in multiple problems, while being significantly cheaper to compute.
-			\end{itemize}
-		\end{alertblock}
-
 		\begin{block}{Convolutional Signal Propagation (CSP)}
 			\begin{center}
 				\adjustbox{width=0.8\columnwidth}{%
@@ -202,12 +203,12 @@
 			}
 		\end{block}
 
-		\begin{block}{Hyperparameter optimization for GNNs}
+		\begin{block}{The Cross-RF method for HPO on graphs}
 			We propose a HPO method using a metamodel \( \mathcal{M}_\rho : \mathfield{R}^d \times \boldsymbol\Lambda \to \mathfield{R} \) that takes as input the properties of a graph dataset \( \delta \left( \mathcal{D} \right) \) and a hyperparameter configuration \( \lambda \), and outputs an estimate of a performance metric \( \rho \). This gives us the following HPO procedure:
 			\begin{equation*}
 				\tau \left( \mathcal{D}, \mathscr{F}, \tilde{\Lambda}, \rho \right) = \argmax_{\lambda \in \tilde{\Lambda}} \mathcal{M}_\rho \left( \delta \left( \mathcal{D} \right), \lambda \right)
 			\end{equation*}
-			We show this method to outperform all of the above methods on the 9 graph datasets.
+			We show this method to outperform all of the above methods on the 9 graph datasets by a slight margin.
 		\end{block}
 	\end{column}
 
