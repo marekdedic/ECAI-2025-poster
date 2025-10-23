@@ -1,0 +1,123 @@
+\begin{tikzpicture}
+\tikzset{node/.style={draw,circle}}
+\tikzset{edge/.style={draw,rectangle,inner sep=2pt}}
+
+\tikzset{nodepos/.style={draw,circle, fill=red!20!white}}
+\tikzset{nodestress/.style={draw,circle, ultra thick}}
+
+
+
+
+%% Bipartite Graph
+\begin{scope}[node distance=2.4cm, circle, draw=black]
+    \node[nodepos] at (0, -2) (x1) {$\uu_1$};
+    \node[nodepos, below of=x1] (x2) {$\uu_2$};
+    \node[nodestress, below of=x2] (x3) {$\uu_3$};
+    \node[node, below of=x3] (x4) {$\uu_4$};
+    \node[node, below of=x4] (x5) {$\uu_5$};
+\end{scope}
+    
+\begin{scope}[node distance=3.2cm]
+    \node[node] at (4, -2) (e1) {$\vv_1$};
+    \node[node, below of=e1] (e2) {$\vv_2$};
+    \node[node, below of=e2] (e3) {$\vv_3$};
+    \node[node, below of=e3] (e4) {$\vv_4$};
+\end{scope}
+
+  \draw (e1) -- (x3);
+  \draw (e1) -- (x1);
+  \draw (e1) -- (x2);
+  \draw (e2) -- (x2);
+  \draw (e2) -- (x1);
+  \draw (e4) -- (x1);
+  \draw (e1) -- (x5);
+  \draw (e2) -- (x4);
+  \draw (e4) -- (x3);
+  \draw (e3) -- (x4);
+  \draw (e3) -- (x5);
+
+
+    
+
+
+
+
+
+
+%% Hyper-Graph
+
+\begin{scope}[xshift=11cm, yshift=-7cm]
+    \node[nodepos] at (0:4) (xx2) {$\uu_2$};
+    \node[nodepos] at (72:4)(xx1) {$\uu_1$};
+    \node[nodestress] at (144:4)(xx3) {$\uu_3$};
+    \node[node] at (216:4)(xx5) {$\uu_5$};
+    \node[node] at (288:4)(xx4) {$\uu_4$};
+
+\end{scope}
+
+  %\draw (ee1) -- (xx3);
+  %\draw (ee1) -- (xx1);
+  %\draw (ee1) -- (xx2);
+  %\draw (ee2) -- (xx2);
+  %\draw (ee2) -- (xx1);
+  %\draw (ee4) -- (xx1);
+  %\draw (ee1) -- (xx5);
+  %\draw (ee2) -- (xx4);
+  %\draw (ee4) -- (xx3);
+  %\draw (ee3) -- (xx4);
+  %\draw (ee3) -- (xx5);
+
+\begin{scope}[fill opacity=0.2]
+    \filldraw[fill=yellow!20] ($(xx1)+(1,0)$) 
+        to[out=90,in=0] ($(xx1) + (0,1)$) 
+        to[out=180,in=70] ($(xx3) + (-1,0)$) 
+        to[out=250,in=210] ($(xx3) + (0,-1)$)
+        to[out=30,in=270] ($(xx1) + (1,0)$);
+    \filldraw[fill=green!20] ($(xx5)+(-1,0)$) 
+        to[out=250,in=180] ($(xx5) + (0,-1)$) 
+        to[out=0,in=210] ($(xx4) + (0,-1)$) 
+        to[out=30,in=290] ($(xx4) + (1, 0)$)
+        to[out=110,in=70] ($(xx5) + (-1,0)$);
+    \filldraw[fill=cyan!20] ($(xx1)+(-1,0)$) 
+        to[out=270,in=90] ($(xx4) + (-1,0)$) 
+        to[out=270,in=180] ($(xx4) + (0,-1)$) 
+        to[out=0,in=270] ($(xx2) + (1,0)$) 
+        to[out=90,in=0] ($(xx1) + (0, 1)$)
+        to[out=180,in=90] ($(xx1) + (-1, 0)$);
+    \filldraw[fill=gray!20] ($(xx1)+(0,1)$) 
+        to[out=180,in=90] ($(xx3) + (-1,0)$) 
+        to[out=270,in=210] ($(xx5) + (0,-1)$) 
+        to[out=30,in=270] ($(xx2) + (1,0)$) 
+        to[out=90,in=0] ($(xx1) + (0, 1)$);
+\end{scope}
+
+
+\begin{scope}[xshift=20cm, yshift=-3cm]
+\node at (0,0) {%
+    $\mathmat{H}=\left[\begin{array}{cccc}
+ 1 & 1 & 0 & 1 \\
+ 1 & 1 & 0 & 0 \\
+ 1 & 0 & 0 & 1 \\
+ 0 & 1 & 1 & 0 \\
+ 1 & 0 & 1 & 0 
+     \end{array}
+     \right]$
+};
+
+\end{scope}
+
+\begin{scope}[xshift=20cm, yshift=-9cm]
+\node at (0,0) {%
+     $\mathmat{Y}=\left[\begin{array}{c}
+ 1 \\
+ 1 \\
+ 0 \\
+ 0 \\
+ 0 
+     \end{array}
+     \right]$
+};
+
+\end{scope}
+
+\end{tikzpicture}
