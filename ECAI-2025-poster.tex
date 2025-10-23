@@ -8,6 +8,7 @@
 \usepackage{adjustbox}
 %\usepackage[utf8]{inputenc}
 \usepackage{fontspec}
+\usepackage{mathrsfs}
 \usepackage{microtype}
 \usepackage{listings}
 \usepackage{booktabs}
@@ -41,9 +42,8 @@
 	xleftmargin =1em
 }
 
-
-\addbibresource{zotero.bib}
-\AtBeginBibliography{\small}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\def\mathdefault#1{#1}
 
 \title{Representation learning for structured data}
 
@@ -193,7 +193,21 @@
 					\bottomrule
 				\end{tabular}
 			}
-			\footnotesize{*NMF processing is not included in evaluation of the time duration.}
+		\end{block}
+
+		\begin{block}{Hyperparameter optimization for GNNs}
+			We benchmarked 5 standard HPO methods on 9 GNN datasets. The results show that Bayesian optimization (BO) and Tree-structured Parzen Estimators (TPE) achieve the best performance, while Quasi Monte-Carlo (QMC) falls behind.
+			\adjustbox{width=\columnwidth}{%
+				\input{images/benchmark_ranks/benchmark_ranks.pgf}
+			}
+		\end{block}
+
+		\begin{block}{Hyperparameter optimization for GNNs}
+			We propose a HPO method using a metamodel \( \mathcal{M}_\rho : \mathfield{R}^d \times \boldsymbol\Lambda \to \mathfield{R} \) that takes as input the properties of a graph dataset \( \delta \left( \mathcal{D} \right) \) and a hyperparameter configuration \( \lambda \), and outputs an estimate of a performance metric \( \rho \). This gives us the following HPO procedure:
+			\begin{equation*}
+				\tau \left( \mathcal{D}, \mathscr{F}, \tilde{\Lambda}, \rho \right) = \argmax_{\lambda \in \tilde{\Lambda}} \mathcal{M}_\rho \left( \delta \left( \mathcal{D} \right), \lambda \right)
+			\end{equation*}
+			We show this method to outperform all of the above methods on the 9 graph datasets.
 		\end{block}
 	\end{column}
 
